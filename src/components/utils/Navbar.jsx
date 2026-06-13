@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { navItems } from "../data/data";
+import { navItems } from "../../data/data";
 
 const Navbar = () => {
   const [activeSec, setActiveSec] = useState("home");
@@ -23,9 +23,9 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-sm border-b border-white/20 px-3 bg-black">
+    <nav className="fixed top-0 w-full z-50 py-2 backdrop-blur-sm border-b border-white/20 px-3 bg-transparent">
       <div className="container mx-auto flex items-center justify-between px-6">
-        <div className="text-2xl text-outline font-bold">Ayush</div>
+        <div className="text-2xl text-outline font-bold"> &lt;Ayush /&gt;</div>
         <ul className="hidden sm:flex space-x-8 text-white text-sm font-light uppercase">
           {navItems.map((item) => {
             return (
@@ -38,7 +38,7 @@ const Navbar = () => {
             );
           })}
         </ul>
-        <button className="ml-4 px-5 py-1 rounded-full bg-linear-to-r from-teal-500 to-teal-700 hover:opacity-90 text-white font-normal transition-all">
+        <button className="ml-4 px-5 py-1 rounded-full bg-linear-to-r from-teal-500 to-teal-700 hover:opacity-90 text-white font-normal transition-all cursor-pointer">
           Hire Me
         </button>
       </div>
