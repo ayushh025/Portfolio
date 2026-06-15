@@ -33,14 +33,14 @@ const Navbar = () => {
                 className={`hover:text-teal-500 transition-colors ${activeSec === item.id ? "text-teal-400" : ""}`}
                 key={item.id}
               >
-                <a href={item.id}>{item.label}</a>
+                <a href={`#${item.id}`}>{item.label}</a>
               </li>
             );
           })}
         </ul>
-        <button className="ml-4 px-5 py-1 rounded-full bg-linear-to-r from-teal-500 to-teal-700 hover:opacity-90 text-white font-normal transition-all cursor-pointer">
+        {/* <button className="ml-4 px-5 py-1 rounded-full bg-linear-to-r from-teal-500 to-teal-700 hover:opacity-90 text-white font-normal transition-all cursor-pointer">
           Hire Me
-        </button>
+        </button> */}
       </div>
     </nav>
   );
