@@ -29,22 +29,45 @@ const About = () => {
               experiences.
             </p>
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-4 text-gray-300">
-            <div>
-              <p>Name:</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+              <p className="text-sm text-gray-400">Name</p>
               <p className="font-medium text-white">Ayush Prajapati</p>
             </div>
-            <div>
-              <p>E-mail:</p>
-              <p className="font-medium text-white">ayushprj22@gmail.com</p>
+
+            <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+              <p className="text-sm text-gray-400">Availability</p>
+              <p className="font-medium text-teal-400">Open to Work</p>
             </div>
-            <div>
-              <p>Mobile No:</p>
+
+            <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+              <p className="text-sm text-gray-400">Email</p>
+              <p className="font-medium text-white break-all">
+                ayushprj22@gmail.com
+              </p>
+            </div>
+
+            <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+              <p className="text-sm text-gray-400">Phone</p>
               <p className="font-medium text-white">+91 9737334436</p>
             </div>
-            <div>
-              <p>Availablity:</p>
-              <p className="font-medium text-white">Open to Work</p>
+
+            <div className="bg-white/5 rounded-xl p-4 border border-white/10 sm:col-span-2">
+              <p className="text-sm text-gray-400 mb-1">Education</p>
+              <p className="font-medium text-white">
+                Bachelor of Computer Applications (BCA)
+              </p>
+              <p className="text-gray-400 text-sm">Sardar Patel University</p>
+            </div>
+
+            <div className="bg-white/5 rounded-xl p-4 border border-white/10 sm:col-span-2">
+              <p className="text-sm text-gray-400 mb-1">
+                Professional Training
+              </p>
+              <p className="font-medium text-white">MERN Stack Development</p>
+              <p className="text-gray-400 text-sm">
+                Red & White Skill Education, Anand
+              </p>
             </div>
           </div>
         </div>

@@ -40,27 +40,60 @@ const Hero = () => {
           </div>
 
           <div className="flex gap-5 mt-8 justify-center md:justify-start text-gray-400">
-            <button className="p-3 bg-white/10 rounded-full hover:text-teal-400 transition-colors">
-              <FaGithub />
-            </button>
-            <button className="p-3 bg-white/10 rounded-full hover:text-teal-400 transition-colors">
-              <LiaLinkedin />
-            </button>
-            <button className="p-3 bg-white/10 rounded-full hover:text-teal-400 transition-colors">
-              <HiOutlineMail />
-            </button>
-            <button className="p-3 bg-white/10 rounded-full hover:text-teal-400 transition-colors">
-              <BsWhatsapp />
-            </button>
+            <a
+              href="https://github.com/ayushh025"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full hover:text-teal-400 hover:bg-white/20 transition-all"
+            >
+              <FaGithub size={22} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/ayush-prj"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full hover:text-teal-400 hover:bg-white/20 transition-all"
+            >
+              <LiaLinkedin size={22} />
+            </a>
+
+            <a
+              href="mailto:ayushprj22@gmail.com"
+              className="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full hover:text-teal-400 hover:bg-white/20 transition-all"
+            >
+              <HiOutlineMail size={22} />
+            </a>
+
+            <a
+              href="https://wa.me/919737334436"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full hover:text-teal-400 hover:bg-white/20 transition-all"
+            >
+              <BsWhatsapp size={22} />
+            </a>
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <button className="px-6 py-2 text-sm rounded-full bg-linear-to-r from-teal-400 to-teal-700 font-light text-white hover:opacity-70 cursor-pointer">
+            <button
+              onClick={() =>
+                document.getElementById("projects")?.scrollIntoView({
+                  behavior: "smooth",
+                })
+              }
+              className="px-6 py-2 text-sm rounded-full bg-linear-to-r from-teal-400 to-teal-700 font-light text-white hover:opacity-70 cursor-pointer"
+            >
               View My Projects
             </button>
-            <button className="px-6 py-2 text-sm rounded-full bg-white/10 backdrop-blur-md font-light text-white hover:opacity-70 cursor-pointer">
+
+            <a
+              href="/resume/my_resume.pdf"
+              download
+              className="px-6 py-2 text-sm rounded-full bg-white/10 backdrop-blur-md font-light text-white hover:opacity-70 transition-all inline-flex items-center justify-center"
+            >
               Download Resume
-            </button>
+            </a>
           </div>
         </div>
       </div>

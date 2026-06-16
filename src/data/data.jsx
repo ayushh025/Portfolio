@@ -161,3 +161,18 @@ export const projects = [
     liveLink: "https://blinkit-clone-ayush.vercel.app",
   },
 ];
+
+export const testimonials = [
+  {
+    name: "John Doe",
+    role: "Frontend Developer",
+    message:
+      "Ayush is a dedicated developer who consistently delivers clean and responsive user interfaces. His attention to detail and willingness to learn make him a valuable team member.",
+  },
+  {
+    name: "Sarah Wilson",
+    role: "Project Manager",
+    message:
+      "Working with Ayush was a great experience. He communicates effectively, solves problems efficiently, and always strives to improve his skills and deliver quality work.",
+  },
+];

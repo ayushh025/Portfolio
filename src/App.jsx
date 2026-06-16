@@ -3,6 +3,8 @@ import Hero from "./components/utils/Hero";
 import About from "./components/utils/About";
 import Skills from "./components/utils/Skills";
 import Projects from "./components/utils/Projects";
+import Testimonials from "./components/utils/Testimonials";
+import Contact from "./components/utils/Contact";
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
       <About />
       <Skills />
       <Projects />
+      <Testimonials />
+      <Contact />
     </>
   );
 };

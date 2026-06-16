@@ -47,6 +47,7 @@ const Skills = () => {
                           damping: 15,
                         }}
                         className="flex items-center gap-2 px-3 py-2 bg-black/40 rounded-lg cursor-pointer"
+                        key={i}
                       >
                         <span className="text-xl">{skill.icon}</span>
                         <span className="text-sm text-gray-300">

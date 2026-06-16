@@ -3,7 +3,7 @@ import { projects } from "../../data/data";
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
-  const displayedProjects = showAll ? projects : projects.slice(0, 4);
+  const displayedProjects = showAll ? projects : projects.slice(0, 6);
 
   return (
     <section
