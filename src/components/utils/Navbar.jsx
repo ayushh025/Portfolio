@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
 import { navItems } from "../../data/data";
 
 const Navbar = () => {
   const [activeSec, setActiveSec] = useState("home");
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section");
@@ -10,39 +13,81 @@ const Navbar = () => {
 
       sections.forEach((sec) => {
         const sectionTop = sec.offsetTop;
+
         if (window.pageYOffset >= sectionTop - 200) {
           current = sec.id;
         }
       });
+
       setActiveSec(current);
     };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
-    <nav className="fixed top-0 w-full z-50 py-2 backdrop-blur-sm border-b border-white/20 px-3 bg-transparent">
-      <div className="container mx-auto flex items-center justify-between px-6">
-        <div className="text-2xl text-outline font-bold"> &lt;Ayush /&gt;</div>
-        <ul className="hidden sm:flex space-x-8 text-white text-sm font-light uppercase">
-          {navItems.map((item) => {
-            return (
-              <li
-                className={`hover:text-teal-500 transition-colors ${activeSec === item.id ? "text-teal-400" : ""}`}
-                key={item.id}
-              >
-                <a href={`#${item.id}`}>{item.label}</a>
+    <>
+      <nav className="fixed top-0 left-0 w-full z-50 bg-[#01191d]/80 backdrop-blur-md border-b border-white/10">
+        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <a
+            href="#home"
+            className="text-2xl font-bold text-outline cursor-pointer"
+          >
+            &lt;Ayush /&gt;
+          </a>
+
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex items-center gap-8 text-white text-sm uppercase">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  className={`transition-colors hover:text-teal-400 ${
+                    activeSec === item.id ? "text-teal-400" : ""
+                  }`}
+                >
+                  {item.label}
+                </a>
               </li>
-            );
-          })}
-        </ul>
-        {/* <button className="ml-4 px-5 py-1 rounded-full bg-linear-to-r from-teal-500 to-teal-700 hover:opacity-90 text-white font-normal transition-all cursor-pointer">
-          Hire Me
-        </button> */}
-      </div>
-    </nav>
+            ))}
+          </ul>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-white text-3xl z-[60]"
+          >
+            {isOpen ? <HiX /> : <HiMenu />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Full Screen Menu */}
+      {isOpen && (
+        <div className="fixed inset-0 z-40 md:hidden bg-[#01191d]/95 backdrop-blur-lg flex items-center justify-center">
+          <ul className="flex flex-col items-center gap-8 text-2xl font-light uppercase text-white">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  onClick={() => setIsOpen(false)}
+                  className={`transition-colors hover:text-teal-400 ${
+                    activeSec === item.id ? "text-teal-400" : ""
+                  }`}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
   );
 };
 

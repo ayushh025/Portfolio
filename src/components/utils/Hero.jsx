@@ -60,6 +60,8 @@ const Hero = () => {
 
             <a
               href="mailto:ayushprj22@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full hover:text-teal-400 hover:bg-white/20 transition-all"
             >
               <HiOutlineMail size={22} />

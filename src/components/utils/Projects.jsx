@@ -3,7 +3,7 @@ import { projects } from "../../data/data";
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
-  const displayedProjects = showAll ? projects : projects.slice(0, 6);
+  const displayedProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
     <section
@@ -22,7 +22,7 @@ const Projects = () => {
           {displayedProjects.map((project, index) => (
             <div
               key={index}
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-teal-500 transition-all duration-300 hover:-translate-y-2"
+              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-teal-500 transition-all duration-300 hover:-translate-y-2  flex flex-col justify-between"
             >
               <h3 className="text-xl font-bold text-white mb-3">
                 {project.name}
